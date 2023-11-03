@@ -7,6 +7,31 @@ namespace Dotnet.Blocks.Serverless.Features.GraphQL
     {
         public string SysInfo => $"{FrameworkDescription} running on {RuntimeIdentifier}";
         public string Hello => "World";
+        public Book Book => new()
+        {
+            Description = "Awesome book about trains",
+            Id = 1337,
+            Title = "Trains and stuff",
+            Author = new()
+            {
+                Age = 4,
+                Name = "Storm"
+            }
+        };
+    }
+
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    public class Book
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public int Id { get; set; }
+        public Person Author { get; set; }
     }
 
     public class Mutation
