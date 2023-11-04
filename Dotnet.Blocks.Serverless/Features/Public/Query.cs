@@ -18,6 +18,11 @@ namespace Dotnet.Blocks.Serverless.Features.GraphQL
                 Name = "Storm"
             }
         };
+
+        public long GetEpochTime2([Service] IClock clock)
+        {
+            return clock.UtcNow.ToUnixTimeMilliseconds();
+        }
     }
 
     public class Person
@@ -54,8 +59,20 @@ namespace Dotnet.Blocks.Serverless.Features.GraphQL
             "eventId": 1
         }
         */
-}
+    }
 
     public record SignupRequest(int eventId);
     public record SignupResponse(int eventId);
+
+
+    public interface IClock
+    {
+        DateTimeOffset UtcNow { get; }
+    }
+
+    public class Clock : IClock
+    {
+        public DateTimeOffset UtcNow => DateTimeOffset.UtcNow;
+
+    }
 }

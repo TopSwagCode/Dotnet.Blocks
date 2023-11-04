@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.Blocks.Serverless", "Dotnet.Blocks.Serverless.csproj", "{FF95B0E6-8AC9-4D9E-AC61-B6DBADE5CE03}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dotnet.Blocks.Serverless.Tests", "..\Dotnet.Blocks.Serverless.Tests\Dotnet.Blocks.Serverless.Tests.csproj", "{87F731EB-99AC-4F1F-9E37-AD97BD28FA72}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{FF95B0E6-8AC9-4D9E-AC61-B6DBADE5CE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF95B0E6-8AC9-4D9E-AC61-B6DBADE5CE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF95B0E6-8AC9-4D9E-AC61-B6DBADE5CE03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87F731EB-99AC-4F1F-9E37-AD97BD28FA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87F731EB-99AC-4F1F-9E37-AD97BD28FA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87F731EB-99AC-4F1F-9E37-AD97BD28FA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87F731EB-99AC-4F1F-9E37-AD97BD28FA72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
