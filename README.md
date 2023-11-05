@@ -11,46 +11,34 @@
 * Authentication
   * It is going to be something simple just to show Admin / Normal user roles to have access to different endpoints. Using bearer token authentication. I have this project: https://github.com/TopSwagCode/Dotnet.IdentityServer I built a while back showing off how to use https://duendesoftware.com/products/identityserver to built own internal OpenID Connect + OAuth server. It also contains a wide range of clients and service to service authentication requests. 
 
-This is just some first thoughts while watching "Danish Bake off" :)
-
 ## Graph / REST thoughts
 
 ### GraphQL:
 GraphQL would be ideal for the many apps that are going to show the events. They all might show the events slighty different and request different information.
 Some apps might just show like a basic list of events. Others might have more detail like pricing and number of avaible tickets. Some might only a specfic event with a certain speaker etc. GraphQL would enable each app to sort, filter and select level of detail of what to show.
 
-SignUp(eventId) 
-{
 
-}
+#### Mutations:
+```
+SignUpToEvent(eventId)
+WithdrawFromEvent(eventId)
+```
 
-Withdraw(eventId)
-{
-
-}
-
+#### Query:
+```
 MyEvents()
-{
-
-}
-
-UpcomingEvents()
-{
-
-}
-
+UpcomingEvents(filter?)
 UpcomingEventsNearMe()
-{
-
-}
+Speakers, Locations, Booths, Agenda etc.
+```
 
 ### REST API:
 While still could be used from public facing and external clients, it would perhaps be more likely to be internal admin tools. Where you would have it setup as dashboards and admin panels. Likely all fields would be shown and editable. There would most like be basic CRUD endpoints and listing endpoints. Many times the base route eg: "/api/event" would also allow querystring parameters for filtering and sorting events. Maybe some pageination. Personally I hate pageination and firmly believe that it should "never" be used on the backend. A good search / filtering solution is way better. Eg. only fetching 100 elements and if more exists in the database, tell the user to narrow down the search. ( There are usecases where it might make sense, but default shouldn't be pageination :) ).
 
 Here is a basic idea for the api.
 ```
-GET      /api/event       List of events
-POST     /api/event       Create event
+GET      /api/event             List of events
+POST     /api/event             Create event
 GET      /api/event/{eventUid}  Get single event
 Delete   /api/event/{eventUid}  Delete single event
 PUT/POST /api/event/{eventUid}  Update single event
@@ -78,5 +66,4 @@ There are ton of more endpoints that could be added for managing an event like:
 
 ```
 GET      /api/event/{eventUid/Speakers ...... Sessions, Booths, Floor, Merchants etc.
-
 ```
